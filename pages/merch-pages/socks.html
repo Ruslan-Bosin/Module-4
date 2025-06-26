@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мерч</title>
+    <link rel="stylesheet" href="../../stylesheets/style.css" />
+    <script src="../../javascript/functions.js"></script>
+  </head>
+  <body>
+        
+    <nav>
+      <div class="menu-bar">
+        <a href="../tickets.html" class="menu-item ">Билеты</a>
+        <a href="../merch.html" class="menu-item menu-item-active">Мерч</a>
+        <p></p><p></p>
+        <a href="../map.html" class="menu-item">Карта</a>
+        <a href="../aboutus.html" class="menu-item">О Нас</a>
+      </div>
+      <a href="../landing.html">
+        <div class="menu-bar-center-block">
+              <img src="../../images/logo-square.svg" alt="Icon">
+        </div>
+      </a>
+            <div class="menu-bar-shadow"></div>
+
+    </nav>
+
+    <div class="space"></div>
+    <h2 class="header">Мерч</h2>
+
+
+    <div class="merch-item">
+        <img class="merch-item-image" src="../../images/socks.png" alt="Socks">
+        <div class="merch-item-info">
+            <h2 class="merch-item-title">Сокс BALD</h2>
+            <p class="merch-item-sub">Цена: 800 руб<br/>Начало продаж: 1 Января 2026</p>
+
+            <form class="form" >
+                
+                <div class="form-separator">
+                    
+
+                    <div class="form-separator-pt2"> 
+                        <label class="merch-form-text" for="lname">Почта:</label>
+                        <input id="email" class="merch-form-input" type="email" id="lname" name="lname" placeholder="avlatyshev@hse.ru" value="">
+                    </div>
+                </div>
+                
+                <input class="form-button" type="submit" value="Зарезервировать">
+            </form> 
+
+        </div>
+
+    </div>
+    
+    <a href="../merch.html" class="back-button hide-anyway"><-Назад</a>
+    <div class="spacer"></div>
+
+    <div class="space"></div>
+    <div class="space"></div>
+
+
+    <footer class="hide-anyway">
+      <img class="footer" src="../../images/Footer.svg">
+    </footer>
+
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+
+    <script>
+    document.querySelector(".form").addEventListener("submit", function(e) {
+
+      const email = document.getElementById("email").value.trim();
+
+   
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("А почта должна быть в формате: имя@домен.ру");
+        return;
+      }
+
+      alert("Спасибо за резерв! Мы свяжемся с вами по почте.");
+    });
+    </script>
+
+  </body>
+</html>

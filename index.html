@@ -3,11 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ла, Ти ШОУ!</title>
-    <script src="javascript/functions.js"></script>
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <title>Загрузка</title>
+    <script src="./javascript/functions.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css" />
   </head>
   <body>
-    <a href="pages/landing.html">Открыть Проект</a>
+    <div class="loading-container">
+      <p class="loading-text">Загрузка...</p>
+    </div>
+
+    <a class="redirect-fail" href="pages/landing.html">Если редирект не сработал, нажмите сюда</a>
+
+    <script>
+    setTimeout(() => {
+      window.location.href = "pages/landing.html"; // replace with your URL
+    }, 1500);
+  </script>
   </body>
 </html>

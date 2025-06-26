@@ -1,23 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ла, Ти ШОУ!</title>
+    <title>ЛЯ, ТИ ШОУ!</title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <script src="../javascript/functions.js"></script>
+
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <h1>Лэнгдинг</h1>
 
-        <a class="logo" href="landing.html">Ля, Ти ШОУ!</a>
-        <a href="tickets.html">Билеты</a>
-        <a href="merch.html">Мерч</a>
-        <a href="map.html">Карта</a>
-        <a href="aboutus.html">О нас</a>
+    <nav>
+      <div class="menu-bar">
+        <a href="tickets.html" class="menu-item">Билеты</a>
+        <a href="merch.html" class="menu-item">Мерч</a>
+        <p></p><p></p>
+        <a href="map.html" class="menu-item">Карта</a>
+        <a href="aboutus.html" class="menu-item">О Нас</a>
+
       </div>
+      <a href="landing.html">
+        <div class="menu-bar-center-block">
+              <img src="../images/logo-square.svg" alt="Icon">
+        </div>
+      </a>
+      <div class="menu-bar-shadow"></div>
+
     </nav>
+    
+    <div class="space"></div>
+    <div class="logo-container">
+      <img src="../images/logo-with-text.svg" alt="Icon">
+    </div>
+    <div class="space"></div>
+
+    <a href="#bubble-1"><div class="button ">Узнать Больше</div></a>
+
+    <img class="popup-msg-1" src="../images/msg1.png">
+    <img class="popup-msg-2" src="../images/msg2.png">
+    <img class="popup-msg-3" src="../images/msg3.png">
+    <img class="popup-msg-4" src="../images/msg4.png">
+
+    <img class="popup-question-1" src="../images/question-1.svg">
+    <img class="popup-question-2" src="../images/question-2.svg">
+    <img class="popup-question-3" src="../images/question-3.svg">
+
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+
+
+    <img id="bubble-1" class="bubble" src="../images/bubble-1.svg">
+    <img class="bubble" src="../images/bubble-2.svg">
+
+    <img class="bubble" src="../images/bald-options.svg">
+    <img class="bald-options-text" src="../images/bald-options-text.svg">
+
+    <div class="space"></div>
+    <div class="space"></div>
+
+    <img class="bubble" src="../images/in-moscow-text.svg">
+    <img class="bubble" src="../images/timetable.svg">
+
+    <div class="space"></div>
+
+    <a href="tickets.html"><div class="big-button">Зарезервировать билет ✓</div></a>
+
+    <div class="space"></div>
+    <div class="space"></div>
+
+
+    <footer>
+      <img class="footer" src="../images/Footer.svg">
+    </footer>
+
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    
+    <script>
+
+
+      window.onload = function() {
+        setTimeout(() => {
+          document.querySelector('.popup-msg-1').style.display = 'block';
+        }, 500);
+        setTimeout(() => {
+          document.querySelector('.popup-msg-2').style.display = 'block';
+        }, 1500);
+        setTimeout(() => {
+          document.querySelector('.popup-msg-3').style.display = 'block';
+        }, 2500);
+        setTimeout(() => {
+          document.querySelector('.popup-msg-4').style.display = 'block';
+        }, 3500);
+        setTimeout(() => {
+          document.querySelector('.button').classList.add('bigger');
+        }, 4500);
+      };
+
+      let triggered = false;
+
+      window.addEventListener('scroll', function () {
+        const triggerPoint = 500;
+        if (!triggered && window.scrollY >= triggerPoint) {
+          triggered = true;
+          document.querySelector('.popup-question-1').style.display = 'block';
+          setTimeout(() => {
+            document.querySelector('.popup-question-2').style.display = 'block';
+          }, 700);
+          setTimeout(() => {
+            document.querySelector('.popup-question-3').style.display = 'block';
+          }, 1400);
+        }
+      });
+
+    
+    </script>
   </body>
 </html>

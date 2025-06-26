@@ -3,21 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Билеты - Ла, Ти ШОУ!</title>
+    <title>Билеты</title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <script src="../javascript/functions.js"></script>
   </head>
   <body>
+    
     <nav>
-      <div class="nav-wrapper">
-        <h1>Билеты</h1>
-
-        <a class="logo" href="landing.html">Ля, Ти ШОУ!</a>
-        <a href="tickets.html">Билеты</a>
-        <a href="merch.html">Мерч</a>
-        <a href="map.html">Карта</a>
-        <a href="aboutus.html">О нас</a>
+      <div class="menu-bar">
+        <a href="tickets.html" class="menu-item menu-item-active">Билеты</a>
+        <a href="merch.html" class="menu-item">Мерч</a>
+        <p></p><p></p>
+        <a href="map.html" class="menu-item">Карта</a>
+        <a href="aboutus.html" class="menu-item">О Нас</a>
       </div>
+      <a href="landing.html">
+        <div class="menu-bar-center-block">
+              <img src="../images/logo-square.svg" alt="Icon">
+        </div>
+      </a>
+            <div class="menu-bar-shadow"></div>
+
     </nav>
+
+    <div class="space"></div>
+    <h2 class="header">Билеты</h2>
+    <img id="give-some-space" class="bubble" src="../images/tickets-msg.svg">
+
+    <form class="form" >
+      <label class="form-text" for="fname">Имя и Фамилия:</label>
+      <input id="name" class="form-input" type="text" id="fname" name="fname" placeholder="Артём Латышев" value="">
+      <label class="form-text" for="lname">Почта:</label>
+      <input id="email" class="form-input" type="email" id="lname" name="lname" placeholder="avlatyshev@hse.ru" value="">
+      <input class="form-button" type="submit" value="Зарезервировать билет ✓">
+    </form> 
+
+    <img class="tickets-msg" src="../images/popup-tickets-msg.svg">
+
+    <div class="space"></div>
+    <div class="space"></div>
+
+
+    <footer>
+      <img class="footer" src="../images/Footer.svg">
+    </footer>
+
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+
+    <script>
+    document.querySelector(".form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if (name === "") {
+        alert("Не забывайте ввести своё имя и фамилию!");
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("А почта должна быть в формате: имя@домен.ру");
+        return;
+      }
+      if (window.innerWidth > 1000) {document.querySelector('.tickets-msg').style.display = 'block';}
+      else {
+        alert("Спасибо за регистрацию! Мы свяжемся с вами по почте.");
+      }
+      
+    });
+    </script>
+    
   </body>
 </html>
